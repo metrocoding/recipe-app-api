@@ -46,3 +46,15 @@ class Tag(models.Model):
     # like overriding toString
     def __str__(self):
         return self.name
+
+
+class Ingrediant(models.Model):
+    name = models.CharField(max_length=255)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+    )
+
+    # like overriding toString
+    def __str__(self):
+        return self.name
